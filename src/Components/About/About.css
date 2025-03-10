@@ -1,0 +1,19 @@
+.about-container {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about-item {
+    flex-basis: 45%;
+    font-size: large;
+}
+
+
+
+.about-item img {
+    width: 100%;
+    height: auto;
+}
