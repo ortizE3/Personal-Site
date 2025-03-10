@@ -1,0 +1,20 @@
+.resume-header-container {
+    display: flex;
+    gap: 50px;
+    padding: 10px;
+    border-radius: 1%;
+    transition: all 0.3s ease-in-out;
+}
+
+.resume-header-container img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 10%;
+}
+
+.resume-header-container:hover {
+    background: rgba(255, 255, 255, 0.233);
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.247);
+    cursor: pointer;
+}
