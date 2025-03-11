@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import sketch from './FooterSketch.ts';
 import p5 from 'p5';
 
