@@ -8,43 +8,10 @@ import angular from '../../assets/icons/skills/angular.svg'
 import react from '../../assets/icons/skills/react.svg'
 import dotnet from '../../assets/icons/skills/net.svg'
 import node from '../../assets/icons/skills/nodejs.svg'
-import { useEffect, useState } from 'react'
 
 import './Skills.css'
 
 function Skills() {
-
-    const [pillars, setPillars] = useState(0);
-
-    useEffect(() => {
-        const handleResize = () => {
-            const sideImage = document.querySelector('#skills');
-            if (sideImage) {
-                const sideImageWidth = sideImage?.getBoundingClientRect().width;
-                setPillars(Math.ceil(sideImageWidth / 30));
-            }
-        };
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    useEffect(() => {
-        const elements = document.querySelectorAll('.vr');
-        elements.forEach((element, index) => {
-            const htmlElement = element as HTMLElement;
-            htmlElement.style.setProperty('animation-delay', `${index * 0.5}s`);
-        });
-    }, [pillars]);
-
-    let getPillars = () => {
-        let content = []
-        for (let i = 0; i < pillars; i++) {
-            content.push(<hr className='vr' key={i} />)
-        }
-        return content;
-    }
 
     return (
         <div>
@@ -68,12 +35,6 @@ function Skills() {
                             <p><img src={node} />Node.js</p>
                         </div>
                     </div>
-                </div>
-
-
-
-                <div className='vr-container'>
-                    {getPillars()}
                 </div>
             </div>
         </div>

@@ -6,13 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'header';
 }
 
-
-
 .header-title {
-    margin: 3px 0px;
+    margin: 3px 20px;
     color: var(--blue);
     transition: transform 0.5s;
     transition-timing-function: ease-in-out;
@@ -24,7 +21,7 @@
 }
 
 .header-link-container {
-    margin: 10px;
+    margin: 3px 20px;
 }
 
 .header-link {

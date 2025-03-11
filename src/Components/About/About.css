@@ -11,9 +11,12 @@
     font-size: large;
 }
 
-
+.about-hi {
+    display: inline;
+}
 
 .about-item img {
     width: 100%;
     height: auto;
+    border-radius: 20px;
 }

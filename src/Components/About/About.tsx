@@ -5,7 +5,7 @@ function About() {
     return (
         <div className='about-container'>
             <div className='about-item about-section'>
-                <div>Hi, I’m Ethan Ortiz,</div>
+                <div><h1 className='about-hi'>Hi</h1> I’m Ethan Ortiz,</div>
                 <hr />
                 A software engineer based in Austin, Texas, with a passion for blending technology and creativity. I specialize in web development with Angular, .NET, and React,
                 I also enjoy artistic programming. For exmaple the cube above uses p5js and is running in real time (check sources for more info).

@@ -4,11 +4,12 @@ import Home from './Pages/Home/Home'
 import Resume from './Pages/Resume/Resume'
 
 import './App.css'
+import Footer from './Components/Footer/Footer'
 
 function App() {
 
   return (
-    <div>
+    <div className='container'>
       <Header />
       <div className='app-container'>
         <Routes>
@@ -17,7 +18,7 @@ function App() {
         </Routes>
 
       </div>
-
+      <Footer />
     </div>
 
   )
