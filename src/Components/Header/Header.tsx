@@ -6,7 +6,7 @@ function Header() {
     let navigate = useNavigate();
 
     let onTitleClick = () => {
-        navigate('/')
+        navigate('/ethan-ortiz/')
     }
 
     let onResumeClick = () => {
