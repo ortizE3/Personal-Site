@@ -17,7 +17,7 @@ function Header() {
                 setIsOpen(false);
             }
             //Remove later
-            setIsMobile(true)
+            setIsMobile(false)
         }
 
         document.addEventListener("mousedown", handleClickOutside);
