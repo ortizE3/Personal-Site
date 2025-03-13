@@ -4,11 +4,19 @@
     text-align: left;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: 1000px) {
+        gap: 30px;
+    }
+
 }
 
 .about-item {
     flex-basis: 45%;
-    font-size: large;
+
+    @media (max-width: 1000px) {
+        flex-basis: 100%;
+    }
 }
 
 .about-hi {
@@ -17,6 +25,13 @@
 
 .about-item img {
     width: 100%;
+
+    @media (max-width: 1000px) {
+        width: 80%;
+        margin-left: 10%;
+    }
+
     height: auto;
     border-radius: 20px;
+
 }

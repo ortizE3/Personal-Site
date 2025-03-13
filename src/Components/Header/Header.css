@@ -34,3 +34,7 @@
     cursor: pointer;
     transform: scale(1.5);
 }
+
+.header-button {
+    max-width: 400px;
+}

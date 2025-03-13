@@ -14,7 +14,7 @@ function sketch(p5: p5) {
     let colors: any = [];
     p5.setup = function () {
         p5.createCanvas(p5.windowWidth - 50, p5.windowHeight - 50, p5.WEBGL);
-        art = p5.createGraphics(400, 400);
+        art = p5.createGraphics(p5.windowHeight * .4, p5.windowHeight * .4);
         setupColors();
     }
 
@@ -22,21 +22,37 @@ function sketch(p5: p5) {
         p5.resizeCanvas(p5.windowWidth - 50, p5.windowHeight - 50);
     }
 
+    function scaleElement(currentWidth: number) {
+        if (currentWidth > 1280) {
+            return .15
+        }
+
+        if (1280 > currentWidth && currentWidth > 800) {
+            return .3
+        }
+
+        if (800 > currentWidth && currentWidth > 400) {
+            return .4
+        }
+        return .5
+    }
+
+
     p5.draw = function () {
         p5.clear();
-
         p5.push();
         art.clear();
+        let scale = scaleElement(p5.windowWidth);
 
         for (let j = 0; j < radius; j += 10) {
             for (let i = 0; i < p5.TWO_PI; i += 1) {
-                let x = p5.tan(i + angle - j + i) * 200 * p5.cos(angle - j - i);
-                let y = p5.cos(i - angle + j - i) * 200 * p5.cos(angle + j + i);
+                let x = p5.tan(i + angle - j + i) * p5.windowWidth * scale * p5.cos(angle - j - i);
+                let y = p5.cos(i - angle + j - i) * p5.windowWidth * scale * p5.cos(angle + j + i);
 
                 art.push();
                 art.noStroke();
                 art.fill(`${colors[p5.floor(angle + i + j) % colors.length]}`);
-                art.translate(x + 200, y + 200);
+                art.translate(x + p5.windowWidth * scale, y + p5.windowWidth * scale);
                 art.rotate(angle + i * 5 + j);
                 art.circle(0, 0, 10 * p5.cos(angle * 5 + i + j));
                 art.pop();
@@ -54,7 +70,7 @@ function sketch(p5: p5) {
         p5.rotateX(angle);
         p5.rotateY(angle);
         p5.rotateZ(angle + 5);
-        p5.box(radius, radius);
+        p5.box(p5.windowWidth * scale, p5.windowWidth * scale);
         p5.pop();
 
         angle += 0.008;

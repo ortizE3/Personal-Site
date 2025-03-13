@@ -1,0 +1,23 @@
+.mobile-drawer {
+    height: 100vh;
+    position: fixed;
+    width: 70vw;
+    top: 0;
+    left: -80vw;
+    background-color: #efecc70a;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.drawer-open {
+    transform: translateX(80vw);
+}
+
+.home-button {
+    margin-top: 10vh;
+}

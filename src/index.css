@@ -22,6 +22,14 @@
   color: var(--black);
   background: linear-gradient(63deg, rgba(240, 238, 216, 1) 0%, rgba(237, 232, 170, 1) 50%, rgba(240, 238, 216, 1) 100%);
   padding: 0;
+
+  @media (max-width: 800px) {
+    font-size: .8em;
+  }
+
+  @media (max-width: 500px) {
+    font-size: .6em;
+  }
 }
 
 body {

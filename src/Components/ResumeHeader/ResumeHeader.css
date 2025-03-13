@@ -4,6 +4,10 @@
     padding: 10px;
     border-radius: 1%;
     transition: all 0.3s ease-in-out;
+
+    @media (max-width: 700px) {
+        gap: 10px;
+    }
 }
 
 .resume-header-container img {
