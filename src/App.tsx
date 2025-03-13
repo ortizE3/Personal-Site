@@ -5,7 +5,7 @@ import Resume from './Pages/Resume/Resume'
 
 import './App.css'
 import Footer from './Components/Footer/Footer'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
 

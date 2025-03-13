@@ -16,6 +16,8 @@ function Header() {
             if (ref.current && !ref.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
+            //Remove later
+            setIsMobile(true)
         }
 
         document.addEventListener("mousedown", handleClickOutside);

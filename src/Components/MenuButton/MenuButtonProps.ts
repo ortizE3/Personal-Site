@@ -1,5 +1,3 @@
-import { JSX } from "react"
-
 export class MenuButtonProps {
     isOpen: boolean
     child?: React.ReactNode
