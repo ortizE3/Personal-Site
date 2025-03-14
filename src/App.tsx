@@ -13,11 +13,15 @@ function App() {
   useEffect(() => {
     const handleResize = () => {
       let windowWidth = window.innerWidth;
-      if (windowWidth < 1350) {
+      if (windowWidth > 1350) {
         windowWidth -= 100;
       }
+      else if (windowWidth > 900) {
+        windowWidth -= 50;
+      } else {
+        windowWidth -= 25;
+      }
       setWidth(Math.min(windowWidth, 1350));
-
     };
     handleResize();
     window.addEventListener("resize", handleResize);
