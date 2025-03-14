@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router';
 import { useEffect, useRef, useState } from 'react';
+import { Constants } from '../../Models/Constants/Constants';
+import MenuButton from '../MenuButton/MenuButton';
 
 import './Header.css'
-import './HeaderMobile.css'
-import { Constants } from '../../Helpers/Constants';
-import MenuButton from '../MenuButton/MenuButton';
+
 
 function Header() {
     const [isMobile, setIsMobile] = useState(false);
@@ -16,54 +16,63 @@ function Header() {
             if (ref.current && !ref.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
-            //Remove later
-            setIsMobile(false)
         }
 
+        const handleResize = () => {
+            if (window.innerWidth < 1000) {
+                setIsMobile(true)
+            } else {
+                setIsMobile(false)
+            }
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 
     let navigate = useNavigate();
 
     let onTitleClick = () => {
-        navigate('/ethan-ortiz/')
+        navigate('/ethan-ortiz/');
     }
 
     let onResumeClick = () => {
-        navigate('/resume')
+        navigate('/resume');
     }
 
     let onOpenClick = () => {
-        setIsOpen(!isOpen)
+        setIsOpen(!isOpen);
     }
 
     let onLinkedInClick = () => {
-        window.location.href = Constants.linkedIn;
+        window.open(Constants.linkedIn, '_blank')
     }
 
     let onGithubClick = () => {
-        window.location.href = Constants.github;
+        window.open(Constants.github, '_blank')
     }
 
     return (
-
-        < header className='header-container' >
+        <>
+            <header className='header-container' >
+                {
+                    !isMobile &&
+                    <>
+                        <h1 className='header-title' onClick={onTitleClick}>Ethan Ortiz</h1>
+                        <div className='header-link-container'>
+                            <a className='header-link' onClick={onLinkedInClick}>LinkedIn</a>
+                            <a className='header-link' onClick={onGithubClick}>Github</a>
+                            <a className='header-link' onClick={onResumeClick}>Resume</a>
+                        </div>
+                    </>
+                }
+            </ header>
             {
                 isMobile &&
-                <>
-                    <h1 className='header-title' onClick={onOpenClick}>Ethan Ortiz</h1>
-                    <div className='header-link-container'>
-                        <a className='header-link' href={Constants.linkedIn}>LinkedIn</a>
-                        <a className='header-link' href={Constants.github}>Github</a>
-                        <a className='header-link' onClick={onResumeClick}>Resume</a>
-                    </div>
-                </>
-            }
-            {
-                !isMobile &&
                 <div ref={ref}>
                     <MenuButton isOpen={isOpen} onClick={onOpenClick} child={<h1 className='header-title' onClick={onOpenClick}>Ethan Ortiz</h1>} />
                     <div className={`mobile-drawer ${isOpen ? 'drawer-open' : ''}`}>
@@ -73,9 +82,9 @@ function Header() {
                         <button className='button header-button' onClick={onResumeClick}>Resume</button>
                     </div>
                 </div>
-
             }
-        </ header>
+        </>
+
     )
 }
 

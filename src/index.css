@@ -17,9 +17,10 @@
   line-height: 1.5;
   font-weight: 400;
   --blue: rgb(0, 64, 255);
-  --black: rgb(0, 0, 0);
+  --secondary: rgb(0, 0, 0);
   --beige: rgb(240 238 216);
-  color: var(--black);
+  --blur-color: #efecc70a;
+  color: var(--secondary);
   background: linear-gradient(63deg, rgba(240, 238, 216, 1) 0%, rgba(237, 232, 170, 1) 50%, rgba(240, 238, 216, 1) 100%);
   padding: 0;
 
@@ -44,4 +45,5 @@ body {
 
 hr {
   width: 100%;
+
 }

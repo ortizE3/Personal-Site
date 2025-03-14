@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import p5 from 'p5';
-import sketch from './CubeSketch.ts';
+import sketch from '../../Sketches/CubeSketch.ts';
 import './Cube.css';
 
 const Cube = () => {
@@ -15,7 +15,6 @@ const Cube = () => {
 
     return (
         <div className="cube-container" ref={p5ContainerRef} />
-
     );
 };
 

@@ -1,4 +1,4 @@
-import ResumeProperties from "./ResumeProperties"
+import ResumeProperties from "../../Models/Props/ResumeProperties"
 import './ResumeHeader.css'
 
 function ResumeHeader(props: ResumeProperties) {

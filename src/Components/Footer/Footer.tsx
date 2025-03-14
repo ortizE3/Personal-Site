@@ -1,9 +1,10 @@
 
 import { useEffect, useRef } from 'react';
-import sketch from './FooterSketch.ts';
+import sketch from '../../Sketches/FooterSketch.ts';
 import p5 from 'p5';
 
 import './Footer.css'
+import { Constants } from '../../Models/Constants/Constants.ts';
 
 function Footer() {
     const p5ContainerRef: any = useRef(null);
@@ -16,11 +17,11 @@ function Footer() {
     }, []);
 
     const emailMe = () => {
-        window.location.href = 'mailto:ortizethan3@gmail.com'
+        window.location.href = 'mailto:ortizethan3@gmail.com';
     }
 
     const addOnLinkedIn = () => {
-        window.location.href = 'http://www.linkedin.com/in/ethan-ortiz-824505162'
+        window.open(Constants.linkedIn, '_blank');
     }
 
     return (
