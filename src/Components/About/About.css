@@ -27,8 +27,7 @@
     width: 100%;
 
     @media (max-width: 1000px) {
-        width: 80%;
-        margin-left: 10%;
+        width: 100%;
     }
 
     height: auto;

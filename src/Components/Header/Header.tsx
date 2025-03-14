@@ -41,7 +41,7 @@ function Header() {
     }
 
     let onResumeClick = () => {
-        navigate('/resume');
+        navigate('/ethan-ortiz/resume');
     }
 
     let onOpenClick = () => {
