@@ -37,11 +37,13 @@ function Header() {
     let navigate = useNavigate();
 
     let onTitleClick = () => {
-        navigate('/ethan-ortiz/');
+        navigate('/');
+        setIsOpen(false);
     }
 
     let onResumeClick = () => {
-        navigate('/ethan-ortiz/resume');
+        navigate('/resume');
+        setIsOpen(false);
     }
 
     let onOpenClick = () => {
