@@ -10,6 +10,13 @@
     }
 }
 
+.resume-header-container ul {
+
+    @media (max-width: 600px) {
+        padding-inline-start: 0px;
+    }
+}
+
 .resume-header-container img {
     max-width: 50px;
     max-height: 50px;

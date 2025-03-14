@@ -34,7 +34,7 @@ function sketch(p5: p5) {
         if (800 > currentWidth && currentWidth > 400) {
             return .4
         }
-        return .5
+        return .45
     }
 
 
