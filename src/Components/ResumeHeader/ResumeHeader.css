@@ -7,14 +7,18 @@
 
     @media (max-width: 700px) {
         gap: 10px;
+        align-items: center;
     }
 }
 
 .resume-header-container ul {
-
     @media (max-width: 600px) {
         padding-inline-start: 0px;
     }
+}
+
+.mobile-date {
+    text-align: right;
 }
 
 .resume-header-container img {

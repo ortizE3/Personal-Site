@@ -7,6 +7,7 @@ import './App.css'
 import Footer from './Components/Footer/Footer'
 import { useEffect, useState } from 'react'
 function App() {
+  const base = '/ethan-ortiz/'
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -31,8 +32,8 @@ function App() {
         maxWidth: width
       }}>
         <Routes>
-          <Route path="/ethan-ortiz/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path={base} element={<Home />} />
+          <Route path={base + 'resume'} element={<Resume />} />
         </Routes>
 
       </div>
